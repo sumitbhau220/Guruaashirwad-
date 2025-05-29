@@ -40,6 +40,23 @@
   <a href="#" class="whatsapp-button" id="shareBtn" target="_blank">WhatsApp पर भेजे</a>
 
   <script src="script.js"></script>
+	<a id="whatsappShare" href="#" target="_blank">
+  <img src="whatsapp-icon.png" alt="Share on WhatsApp" width="50">
+</a>
+
+<script>
+  const shareBtn = document.getElementById("whatsappShare");
+
+  shareBtn.onclick = function () {
+    const name = document.getElementById("nameInput").value;
+    const sender = document.getElementById("senderName").innerText;
+    const message = `*${sender} की ओर से आपके लिए 🙏*\n\n${name}, आपको गुरु आशीर्वाद की शुभकामनाएं! 🌟\n\nदेखें: https://sumitbhau220.github.io/Guruaashirwad-/`;
+
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    shareBtn.href = whatsappUrl;
+  };
+</script>
+
 </body>
 </html>
 <script type="text/javascript">
